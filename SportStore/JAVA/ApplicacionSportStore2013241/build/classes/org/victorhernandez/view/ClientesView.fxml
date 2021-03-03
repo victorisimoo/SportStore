@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.ClienteController">
+   <children>
+      <Label layoutX="269.0" layoutY="23.0" text="Clientes">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="76.0" text="Codigo " />
+      <Label layoutX="68.0" layoutY="104.0" text="Nombre" />
+      <Label layoutX="324.0" layoutY="76.0" text="Nit" />
+      <Label layoutX="324.0" layoutY="104.0" text="Direccion" />
+      <ComboBox fx:id="cmbCliente" layoutX="138.0" layoutY="72.0" prefWidth="150.0" />
+      <TableView fx:id="tblClientes" layoutX="71.0" layoutY="134.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="200.0" prefWidth="460.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="colNombre" prefWidth="132.0" text="Nombre" />
+            <TableColumn fx:id="colNit" prefWidth="111.0" text="Nit" />
+            <TableColumn fx:id="colDireccion" prefWidth="141.0" text="Direccion" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtNombre" layoutX="139.0" layoutY="100.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txtNit" layoutX="382.0" layoutY="72.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txtDireccion" layoutX="382.0" layoutY="100.0" prefHeight="25.0" prefWidth="150.0" />
+      <Button fx:id="btnReporte" layoutX="279.0" layoutY="346.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <Button fx:id="btnEliminar" layoutX="137.0" layoutY="346.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="208.0" layoutY="346.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnNuevo" layoutX="71.0" layoutY="346.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="483.0" layoutY="343.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="364.0" layoutY="343.0" onMouseClicked="#ventanaTelefonoClientes" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/telephone-tel-viber-social-media-network-number-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="424.0" layoutY="343.0" onMouseClicked="#ventanaEmailClientes" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/email_14410.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

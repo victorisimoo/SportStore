@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.UsuarioController">
+   <children>
+      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="522.0" layoutY="354.0" onKeyPressed="#ventanaUsuarios" onMouseClicked="#ventanaUsuarios" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/contacts_512dp.png" />
+         </image></ImageView>
+      <Label layoutX="226.0" layoutY="14.0" text="Ingreso de usuario">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="95.0" text="Nombre del usuario" />
+      <Label layoutX="41.0" layoutY="127.0" text="Email" />
+      <Label layoutX="324.0" layoutY="95.0" prefHeight="17.0" prefWidth="85.0" text="Tipo de usuario" />
+      <Label layoutX="324.0" layoutY="63.0" text="Usuario" />
+      <TextField fx:id="txtNombre" layoutX="161.0" layoutY="91.0" />
+      <TextField fx:id="txtUsuario" layoutX="416.0" layoutY="59.0" />
+      <TextField fx:id="txtEmail" layoutX="161.0" layoutY="123.0" />
+      <TextField fx:id="txtTipo" layoutX="416.0" layoutY="91.0" />
+      <TableView fx:id="tblUsuarios" layoutX="41.0" layoutY="160.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="194.0" prefWidth="523.0">
+        <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Codigo" />
+            <TableColumn fx:id="colNombre" prefWidth="125.0" text="Nombre" />
+            <TableColumn fx:id="colEmail" prefWidth="113.0" text="Email" />
+            <TableColumn fx:id="colUsuario" prefWidth="101.0" text="Usuario" />
+            <TableColumn fx:id="colTipo" prefWidth="108.0" text="Tipo de usuario" />
+            <TableColumn fx:id="colContrasena" prefWidth="108.0" text="Contrasena" />
+        </columns>
+      </TableView>
+      <Label layoutX="41.0" layoutY="63.0" text="Código Usuario" />
+      <ComboBox fx:id="cmbCodigo" layoutX="161.0" layoutY="59.0" prefWidth="150.0" />
+      <Button fx:id="btnNuevo" layoutX="41.0" layoutY="361.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="104.0" layoutY="361.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="177.0" layoutY="361.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="255.0" layoutY="361.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <Label layoutX="324.0" layoutY="127.0" text="Contraseña" />
+      <PasswordField fx:id="txtContrasena" layoutX="416.0" layoutY="123.0" />
+   </children>
+</AnchorPane>

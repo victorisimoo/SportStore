@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.EmailClienteController">
+   <children>
+      <Label layoutX="245.0" layoutY="10.0" text="Email Clientes">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="50.0" text="CodigoEmail cliente" />
+      <Label layoutX="43.0" layoutY="78.0" text="Descripcion" />
+      <Label layoutX="327.0" layoutY="78.0" text="Email" />
+      <Label layoutX="327.0" layoutY="50.0" text="Codigo cliente" />
+      <ComboBox fx:id="cmbCodigoEmail" layoutX="161.0" layoutY="46.0" prefWidth="150.0" />
+      <TextField fx:id="txtDescripcion" layoutX="161.0" layoutY="74.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txtEmail" layoutX="411.0" layoutY="74.0" prefHeight="25.0" prefWidth="150.0" />
+      <TableView fx:id="tblEmailClientes" layoutX="41.0" layoutY="112.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="220.0" prefWidth="520.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="colDescripcion" prefWidth="102.0" text="Descripcion" />
+            <TableColumn fx:id="colEmail" prefWidth="100.0" text="Email" />
+            <TableColumn fx:id="colCodigoCliente" prefWidth="122.0" text="Codigo cliente" />
+            <TableColumn fx:id="colNombreCliente" prefWidth="122.0" text="Nombre cliente" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="43.0" layoutY="353.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="105.0" layoutY="353.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="180.0" layoutY="353.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="249.0" layoutY="354.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <ImageView fx:id="menuButton" fitHeight="46.0" fitWidth="36.0" layoutX="525.0" layoutY="344.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbCodigoCliente" layoutX="411.0" layoutY="46.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

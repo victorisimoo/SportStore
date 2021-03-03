@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteFacturaM" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="491669b7-4e4a-481f-8a1e-f0d17152eaa5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_NumeroFactura" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Victor Hernandez\\Documents\\NetBeansProjects\\ApplicacionSportStore2013241\\src\\org\\victorhernandez\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarFacturas $P{_NumeroFactura}]]>
+	</queryString>
+	<field name="NumeroFactura" class="java.lang.Integer"/>
+	<field name="FechaFactura" class="java.sql.Date"/>
+	<field name="NitFactura" class="java.lang.String"/>
+	<field name="EstadoFactura" class="java.lang.String"/>
+	<field name="NombreCliente" class="java.lang.String"/>
+	<field name="TotalFactura" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="142" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="802" height="28" uuid="5cbd952c-9fc2-4c66-bcea-8f57f076ebeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SportStore San Cristobal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="78" width="802" height="19" uuid="ee2bb013-c8b3-4d56-9a90-22157e902340"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[15 CALLE BOULV. BAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="802" height="19" uuid="b104b6f7-5c7a-4c97-8d25-0a0c598cb048"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[PLAZA SAN CRISTOBAL ZONA 8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="93" width="802" height="19" uuid="40e5dfb7-300e-4207-8f63-142af2dc112c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[MIXCO, GUATEMALA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="108" width="802" height="19" uuid="8a8a54ab-edda-4c25-af2e-256c919f322f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[INDUSTRIA DE ARTICULOS DEPORTIVOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="123" width="802" height="19" uuid="1adede92-3caa-4cae-89a9-9fdf4bebc8f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nit: 452158-7]]></text>
+			</staticText>
+			<image>
+				<reportElement x="390" y="0" width="57" height="41" uuid="6764791e-8034-403b-bc3c-fc8082d6b590"/>
+				<imageExpression><![CDATA["C:\\Users\\Victor Hernandez\\Documents\\NetBeansProjects\\ApplicacionSportStore2013241\\src\\org\\victorhernandez\\images\\IconoFactura.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="ecd3239c-5adb-4c3c-b7f2-9e71f817c897"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="51" height="30" uuid="5f8367f5-de38-4c21-a0ba-452ff5187352"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="0" width="50" height="29" uuid="b5952e39-4eb9-4be7-a2c5-e006a525e298"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="53" height="30" uuid="4b6e3f80-fd35-4504-b533-1372d6824b9b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nit:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="1" width="129" height="29" uuid="d57cb720-9d2f-43ec-a78c-3bd0d8533cb9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="1" width="98" height="29" uuid="0423ccef-4143-4399-ac08-1fba8fecec63"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NitFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="554" y="1" width="122" height="29" uuid="14aa02a7-eb85-4a6d-a213-26332edfb54a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="120" height="29" uuid="f5b4702b-853a-44be-9342-cd05ef7a7b12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EstadoFactura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="331" y="0" width="53" height="29" uuid="b6b57661-68c3-4376-9501-e15f5cafdb82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="676" y="1" width="51" height="28" uuid="2720dc32-a33e-4377-a160-3a56df49d1f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="727" y="1" width="75" height="28" uuid="e8eb811f-79e2-454d-9950-f7c0aad8c3d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TotalFactura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="031ad935-49e8-41ae-bc33-448add2ea6bc"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="802" height="19" uuid="9662963d-e3a9-463f-a36c-de4668bf6c36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="466" height="19" uuid="ebc8a565-19dd-47b7-9ea8-ba3edf2c08a0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serie: 2Z1 Documento No. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="466" y="15" width="336" height="19" uuid="b438671f-411b-43f8-8b63-7f1f085fc164"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NumeroFactura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="29" width="802" height="22" uuid="c36463bd-2388-4155-8677-25ff58afcef2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Caja 21: cajero 253565, Jeinlin Teresita Zepeda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="1c4538ce-2430-4078-8725-b06ffeffc306"/>
+			</line>
+			<subreport>
+				<reportElement x="-20" y="-18" width="200" height="100" uuid="ac7e094b-4d9e-4dde-8025-fe25b5a41efa"/>
+				<subreportParameter name="_NumeroFactura">
+					<subreportParameterExpression><![CDATA[$F{NumeroFactura}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ReporteDetalleFactura.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="88" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

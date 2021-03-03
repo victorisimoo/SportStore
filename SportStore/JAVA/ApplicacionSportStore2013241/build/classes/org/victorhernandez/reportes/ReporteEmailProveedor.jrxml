@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmailProveedor" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59b40779-ab41-4a2f-8df9-f710250453f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoEmailProveedor" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarEmailProveedores $P{_CodigoEmailProveedor}]]>
+	</queryString>
+	<field name="CodigoEmailProveedor" class="java.lang.Integer"/>
+	<field name="DescripcionEmail" class="java.lang.String"/>
+	<field name="EmailProveedor" class="java.lang.String"/>
+	<field name="CodigoProveedor" class="java.lang.Integer"/>
+	<field name="RazonSocial" class="java.lang.String"/>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="41" uuid="94f29f03-1c7a-4c0e-a1a5-cf96787e99d9"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="182" y="41" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="2e88b872-2e30-4774-86bd-b6df16d20e97"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="52" width="802" height="20" uuid="778f0596-0b2b-46db-9165-c641a85fc9e7"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Email Proveedor]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="0" width="799" height="1" uuid="b9e571f5-8650-4fb0-bdd3-8c27b787ada0"/>
+			</line>
+			<staticText>
+				<reportElement x="105" y="0" width="190" height="29" uuid="bde06bd2-92aa-4475-b536-5bef0a7a422c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Razón social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="0" width="206" height="29" uuid="19bc873a-d7a2-4ff5-8ba0-d9b71b95279c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="0" width="77" height="29" uuid="9d71c288-3aab-4c63-935a-79d51cd0af67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="630" y="0" width="134" height="29" uuid="08dabebb-febf-4d58-973e-5e76ad1fcce0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="0" width="129" height="29" uuid="cce8a6db-32fd-469b-8f18-73dda92de913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo proveedor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="29" width="802" height="2" uuid="2910e493-137d-4eaf-982b-f0b9ace863d8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="424" y="0" width="206" height="26" uuid="80990ccf-e756-4b81-aef4-ff812df884d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EmailProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="1" width="134" height="26" uuid="d16a64bf-cdfd-44a8-b413-9cd582adad76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="0" width="129" height="26" uuid="b4898ac6-91db-4cfa-b716-99e98dba2aba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="190" height="26" uuid="27452d65-f3d4-44f1-a540-85d90eb2d1b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RazonSocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="0" width="77" height="26" uuid="aba4e6dc-ad79-475d-8873-a714efc6bdd3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoEmailProveedor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCategoria" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="86ef99d7-3d71-4204-8f04-eb1248ea01e1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoCategoria" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarCategoria $P{_CodigoCategoria}]]>
+	</queryString>
+	<field name="CodigoCategoria" class="java.lang.Integer"/>
+	<field name="DescripcionCategoria" class="java.lang.String"/>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="41" uuid="4f9d4e9c-4a58-45db-8c29-d756ca5233ba"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="183" y="41" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="fac91527-64a7-407f-ba11-214cbc2fc8be"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="51" width="802" height="20" uuid="fe3e69e1-0363-4c7b-861c-007b36fa8ea5"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Categoria]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="0" width="145" height="33" uuid="eeb354d5-21be-4ec7-b497-3a51ff3ffb66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="252" height="33" uuid="2aac9b0c-8b9c-487e-a402-824abb352d03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción Categoria]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="802" height="2" uuid="c583f167-76e3-4647-809c-6800efd89fff"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="214" y="-3" width="145" height="30" uuid="ae0ceff8-523c-4cbc-a241-8ab62b642288"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoCategoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="-3" width="252" height="30" uuid="40f35a89-8372-450c-b0d8-70ad1ef0022d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionCategoria}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="802" height="2" uuid="c4f86713-889d-4926-b95a-c7aa3ea736e1"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

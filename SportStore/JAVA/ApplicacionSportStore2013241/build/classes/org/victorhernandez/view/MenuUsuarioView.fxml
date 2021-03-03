@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.LoginController">
+   <children>
+      <Button fx:id="btnReporte" layoutX="398.0" layoutY="299.0" mnemonicParsing="false" onAction="#generarReporteUsuarios" text="Reporte" />
+      <Button fx:id="btnCancelar" layoutX="311.0" layoutY="299.0" mnemonicParsing="false" onAction="#limpiarControles" text="Cancelar" />
+      <Button fx:id="btnRegister" layoutX="220.0" layoutY="299.0" mnemonicParsing="false" onAction="#ventanaUsuarios" text="Registrarse" />
+      <Button fx:id="btnLogin" layoutX="145.0" layoutY="299.0" mnemonicParsing="false" onAction="#loginPrograma" text="Ingresar" />
+      <PasswordField fx:id="txtPassword" layoutX="176.0" layoutY="221.0" prefHeight="25.0" prefWidth="277.0" promptText="Contraseña" />
+      <TextField fx:id="txtUsuario" layoutX="176.0" layoutY="195.0" prefHeight="25.0" prefWidth="277.0" promptText="Usuario" />
+      <ComboBox fx:id="cmbTipoUsuario" editable="true" layoutX="176.0" layoutY="248.0" prefHeight="25.0" prefWidth="277.0" promptText="Tipo de usuario" />
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="148.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/17115.png" />
+         </image></ImageView>
+      <ImageView fitHeight="25.0" fitWidth="36.0" layoutX="148.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/1392619167.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="145.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/candado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="130.0" layoutX="260.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/PrincipalIcon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="213.0" layoutY="163.0" text="¡Registrate antes de entrar!">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.InformacionController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/2017-05-14%2003.48.07%202.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="127.0" layoutY="30.0" text="Victor Noé Hernández Meléndez" textFill="#f8f1f1">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="55.0" fitWidth="41.0" layoutX="545.0" layoutY="345.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="164.0" fitWidth="112.0" layoutX="245.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/asdf.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="190.0" layoutY="235.0" text="Backend &amp; Frontend Developer" textFill="#f2ecec">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="241.0" layoutY="289.0" text="Application: SpotStore" textFill="#f5eded" />
+      <Label layoutX="243.0" layoutY="257.0" text="Experience: Two years" textFill="#f5f0f0" />
+      <Label layoutX="266.0" layoutY="274.0" text="ID: 2013-241" textFill="#ebe2e2" />
+      <Label layoutX="257.0" layoutY="306.0" text="Version 2.17.146" textFill="#eeebeb" />
+      <Label layoutX="252.0" layoutY="323.0" text="All rights reserved" textFill="#eee8e8" />
+      <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="252.0" layoutY="345.0" onMouseClicked="#enlaceLinkendin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/linkedin-dreamstale45.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="305.0" layoutY="345.0" onMouseClicked="#enlaceFacebook" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/1491579586-yumminkysocialmedia21_83091.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

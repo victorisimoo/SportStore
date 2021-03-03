@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProductos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="769846cb-c58d-4a6b-a610-d40647d1b447">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoProducto" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarProducto]]>
+	</queryString>
+	<field name="CodigoProducto" class="java.lang.Integer"/>
+	<field name="PrecioUnitario" class="java.math.BigDecimal"/>
+	<field name="DescripcionProducto" class="java.lang.String"/>
+	<field name="PrecioDocena" class="java.math.BigDecimal"/>
+	<field name="PrecioPorMayor" class="java.math.BigDecimal"/>
+	<field name="ExistenciaProducto" class="java.lang.Integer"/>
+	<field name="CodigoCategoria" class="java.lang.Integer"/>
+	<field name="CodigoMarca" class="java.lang.Integer"/>
+	<field name="CodigoTalla" class="java.lang.Integer"/>
+	<field name="Imagen" class="java.lang.String"/>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="41" uuid="8602a26f-4b7d-44a0-9055-86975ca02e7f"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="182" y="41" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="06170a0a-2132-4ddf-b5cc-bc3c5d6e6611"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="52" width="802" height="22" uuid="cc884ba0-ba8e-497e-868b-4f8d46fd7779"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Inventario de productos 2017]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="0" width="54" height="27" uuid="4a5fd918-e0cb-4da1-8291-e6b19532cc98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="802" height="2" uuid="0f5c8a8d-261f-43ee-b5ad-ef4d623fd663"/>
+			</line>
+			<staticText>
+				<reportElement x="88" y="0" width="220" height="27" uuid="61d83abe-e51f-4a9a-b126-e63f847a5442"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="0" width="85" height="27" uuid="27d72fb9-bb00-47bc-acf0-b36e9e4f4704"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Existencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="0" width="112" height="27" uuid="c345302b-7df4-45ad-acfc-540859fe444a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="624" y="0" width="112" height="27" uuid="757c8d81-1282-429f-b07b-9755aa4e90e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio p. mayor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="119" height="27" uuid="0ae2877b-f030-4a64-988b-2296ee9453ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio p. docena]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="0" width="799" height="1" uuid="d4bbfda5-291b-4a95-bdea-9ad6614f7a65"/>
+			</line>
+			<textField>
+				<reportElement x="34" y="1" width="54" height="20" uuid="19a8b9eb-2304-494a-a169-45f915861f71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="0" width="220" height="20" uuid="0c225797-8d24-4af0-bca2-fa96e5420975"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="0" width="85" height="20" uuid="4b45e03c-f0e7-47eb-889e-bb93287b63ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ExistenciaProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="0" width="112" height="20" uuid="beaf7427-cc69-41b2-82d1-3b6860febea7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PrecioUnitario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="1" width="119" height="20" uuid="b01663d3-5f47-4d78-afb8-ff9b1960d7ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PrecioDocena}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="624" y="1" width="112" height="20" uuid="7c866466-55a7-4e95-b9ed-c38f3f2ef767"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PrecioPorMayor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

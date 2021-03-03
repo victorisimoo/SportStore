@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="476.0" fitWidth="669.0" layoutX="-69.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/IMG_20170514_182106.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar blendMode="HARD_LIGHT" depthTest="ENABLE" layoutX="174.0" layoutY="239.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="289.0" style="-fx-background-color: white; -fx-background-insets: 20; -fx-border-color: White; -fx-border-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="0.64" hue="0.3" saturation="-0.3" />
+         </effect>
+         <menus>
+            <Menu mnemonicParsing="false" text="Módulos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCompras" text="Compras" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaFacturas" text="Facturas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProveedores" text="Proveedores" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaClientes" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCategorias" text="Categorias" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaMarcas" text="Marcas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTallas" text="Tallas" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reportes">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCompras" text="Inventario compras" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaFacturas" text="Inventario facturas" />
+                  <MenuItem mnemonicParsing="false" onAction="#generarReporte" text="Inventario productos" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Info. de la aplicación">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaInformacion" text="Programador" />
+               </items>
+            </Menu>
+         </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+      <ImageView fitHeight="155.0" fitWidth="168.0" layoutX="231.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/PrincipalIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

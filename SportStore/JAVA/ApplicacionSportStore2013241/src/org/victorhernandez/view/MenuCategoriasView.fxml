@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.CategoriaController">
+   <children>
+      <Label layoutX="269.0" layoutY="5.0" prefHeight="44.0" prefWidth="116.0" text="Categorias">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="62.0" text="Codigo Categoria">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="95.0" layoutY="90.0" text="Descripcion">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ComboBox fx:id="cmbCategoria" layoutX="211.0" layoutY="60.0" prefHeight="25.0" prefWidth="286.0" />
+      <TextField fx:id="txtDescripcion" layoutX="209.0" layoutY="91.0" prefHeight="25.0" prefWidth="286.0" />
+      <TableView fx:id="tblCategorias" layoutX="58.0" layoutY="127.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="200.0" prefWidth="480.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="258.0" text="Codigo" />
+          <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="221.0" text="Descripcion" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEliminar" layoutX="119.0" layoutY="340.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="188.0" layoutY="340.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnNuevo" layoutX="58.0" layoutY="340.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnReporte" layoutX="260.0" layoutY="340.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="495.0" layoutY="337.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

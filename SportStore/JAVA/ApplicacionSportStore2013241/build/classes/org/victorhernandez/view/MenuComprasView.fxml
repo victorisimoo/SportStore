@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.CompraController">
+   <children>
+      <Label layoutX="265.0" layoutY="14.0" text="Compras">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="48.0" text="Numero Documento" />
+      <Label layoutX="51.0" layoutY="73.0" text="Descripcion Compra" />
+      <Label layoutX="329.0" layoutY="73.0" text="Fecha" />
+      <Label layoutX="329.0" layoutY="48.0" prefHeight="17.0" prefWidth="108.0" text="Cod. Proveedor" />
+      <TextField fx:id="txtDescripcion" layoutX="167.0" layoutY="69.0" prefHeight="25.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbNumeroDocumento" layoutX="167.0" layoutY="44.0" prefWidth="150.0" />
+      <TableView fx:id="tblCompras" layoutX="46.0" layoutY="132.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="212.0" prefWidth="519.0">
+        <columns>
+          <TableColumn fx:id="colNumeroDocumento" minWidth="3.0" prefWidth="94.0" text="N. Documento" />
+          <TableColumn fx:id="colDescripcion" prefWidth="77.0" text="Descripcion" />
+            <TableColumn fx:id="colFecha" prefWidth="67.0" text="Fecha" />
+            <TableColumn fx:id="colCodigoProveedor" prefWidth="110.0" text="CodigoProveedor" />
+            <TableColumn fx:id="colRazonSocial" minWidth="8.0" prefWidth="117.0" text="Razon Social" />
+            <TableColumn fx:id="colTotal" prefWidth="53.0" text="Total" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="49.0" layoutY="360.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="111.0" layoutY="361.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="178.0" layoutY="361.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="254.0" layoutY="361.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="530.0" layoutY="356.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="338.0" layoutY="361.0" mnemonicParsing="false" onAction="#ventanaDetalleCompra" text="Agregar detalle de compra" />
+      <ComboBox fx:id="cmbProveedor" layoutX="416.0" layoutY="44.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateFecha" layoutX="416.0" layoutY="69.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="52.0" layoutY="96.0" text="Total Compra" />
+      <TextField fx:id="txtTotal" layoutX="167.0" layoutY="94.0" prefHeight="25.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

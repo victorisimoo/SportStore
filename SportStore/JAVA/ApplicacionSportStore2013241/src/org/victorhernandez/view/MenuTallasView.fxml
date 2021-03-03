@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victorhernandez.controller.TallaController">
+   <children>
+      <Label layoutX="286.0" layoutY="27.0" text="Tallas">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="74.0" text="Codigo Talla" />
+      <Label layoutX="309.0" layoutY="74.0" text="Descripción Talla" />
+      <ComboBox fx:id="cmbTalla" layoutX="125.0" layoutY="70.0" prefWidth="150.0" />
+      <TextField fx:id="txtDescripcion" layoutX="409.0" layoutY="70.0" prefHeight="25.0" prefWidth="150.0" />
+      <TableView fx:id="tblTallas" layoutX="42.0" layoutY="111.0" onKeyPressed="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="221.0" prefWidth="518.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="241.0" text="Codigo" />
+          <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="276.0" text="Descripcion" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="65.0" layoutY="353.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="128.0" layoutY="353.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="200.0" layoutY="354.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" onAction="#generarReporte" text="Reporte" />
+      <ImageView fitHeight="48.0" fitWidth="45.0" layoutX="508.0" layoutY="345.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home-icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

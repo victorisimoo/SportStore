@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProveedores" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eec90226-6350-472f-ab44-6df51deb062e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoProveedor" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarProveedores $P{_CodigoProveedor}]]>
+	</queryString>
+	<field name="CodigoProveedor" class="java.lang.Integer"/>
+	<field name="RazonSocial" class="java.lang.String"/>
+	<field name="NitProveedor" class="java.lang.String"/>
+	<field name="DireccionProveedor" class="java.lang.String"/>
+	<field name="PaginaWeb" class="java.lang.String"/>
+	<field name="ContactoPrincipal" class="java.lang.String"/>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="196" y="41" width="428" height="8" forecolor="#FFFFFF" backcolor="#000000" uuid="af12459e-7766-4400-bbc8-9f835269702c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="0" width="802" height="41" uuid="03e8a006-8764-4430-b62d-76579e4d370a"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="49" width="802" height="25" uuid="d1d48b24-7555-45c5-8522-77b8ddc761bd"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Proveedores]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="73" width="802" height="1" uuid="adc5c376-8ab9-485b-82a0-5ccb152a5a8a"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="0" width="155" height="26" uuid="98e7c481-636f-4a8c-b4dc-11576c6f4d4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Razón social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="-1" width="106" height="28" uuid="0f5c99f5-c2d7-4be3-b25b-cc668a8c5f5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nit ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="0" width="149" height="27" uuid="e6373fa1-930c-4b96-8b5d-8ededb0c3aab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="1" width="203" height="26" uuid="032ed95c-535b-46f5-a77c-8d4e2433faad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Página web]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="667" y="1" width="134" height="26" uuid="7e41417e-97db-4e9b-a138-78b3cb911178"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contacto principal]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="802" height="1" uuid="66832ee2-7076-4a02-a475-104680c7d24d"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="54" height="25" uuid="c3dc90cc-7864-4116-8924-e804070aae33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="54" height="20" uuid="468e2a25-f81f-4c13-a620-67dad2ef923a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="155" height="20" uuid="83637cea-953a-4989-ab5d-5246b01019d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RazonSocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="209" y="0" width="106" height="20" uuid="e77fd148-f183-4ac2-ba30-d197695b3c11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NitProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="149" height="20" uuid="8dcabcf0-480e-4272-aa0b-223007c5effa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DireccionProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="0" width="203" height="20" uuid="b5e01ac1-740b-4610-856e-7226766c7c2f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PaginaWeb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="667" y="0" width="134" height="20" uuid="28b6fc97-e329-4f97-807c-a205d0b70514"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ContactoPrincipal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

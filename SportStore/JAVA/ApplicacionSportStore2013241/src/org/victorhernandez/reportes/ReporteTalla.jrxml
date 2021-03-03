@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTalla" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3954562-9778-4fd7-8b40-00e193743a91">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoTalla" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="_CodigoTallas" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarTallas $P{_CodigoTallas}]]>
+	</queryString>
+	<field name="CodigoTalla" class="java.lang.Integer"/>
+	<field name="DescripcionTalla" class="java.lang.String"/>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="802" height="41" uuid="9e05a7d0-c2b7-47ee-b922-172cce295f0d"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="193" y="41" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="bd2cea0c-5fa0-4121-8166-3a884b52a892"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="52" width="802" height="20" uuid="834e0219-72be-461a-84b0-3bfe98ecd072"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Tallas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-5" width="802" height="2" uuid="2e7d8211-081f-4f19-9b82-ba07890e0097"/>
+			</line>
+			<staticText>
+				<reportElement x="273" y="0" width="100" height="28" uuid="be8092b4-a868-43e9-8f06-e41eef816ae8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Talla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="0" width="111" height="28" uuid="b74c8713-e9cc-4c51-8fe7-720c03dae5be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion Talla]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="2" uuid="cdecb267-ee65-49f0-8e2e-fb730ec92567"/>
+			</line>
+			<textField>
+				<reportElement x="273" y="0" width="100" height="22" uuid="96f79d1f-1368-4515-9a1f-06ee26be3639"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoTalla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="2" width="111" height="20" uuid="5ff51caa-d455-43ab-b61e-72310d49c5ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionTalla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

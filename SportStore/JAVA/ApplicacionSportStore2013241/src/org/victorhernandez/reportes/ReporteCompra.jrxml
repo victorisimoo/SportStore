@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCompra" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a7328bf-78e1-47bf-823e-fd10cad7d6c4">
+	<property name="ireport.zoom" value="1.1269722013523664"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="151"/>
+	<parameter name="_NumeroDocumento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Victor Hernandez\\Documents\\NetBeansProjects\\ApplicacionSportStore2013241\\src\\org\\victorhernandez\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarCompras $P{_NumeroDocumento}]]>
+	</queryString>
+	<field name="NumeroDocumento" class="java.lang.Integer"/>
+	<field name="FechaCompra" class="java.sql.Date"/>
+	<field name="DescripcionCompra" class="java.lang.String"/>
+	<field name="RazonSocial" class="java.lang.String"/>
+	<field name="TotalCompra" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="36" width="572" height="41" uuid="db5cda98-6452-4b31-a94e-121acc592f2b"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="87" width="570" height="20" uuid="5db3b4f9-e1be-4ae6-b513-3b69e11485af"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Compras]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="74" y="77" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="294bb74a-77cc-440e-8ea8-f71251a344d8"/>
+			</rectangle>
+			<image>
+				<reportElement x="258" y="-3" width="60" height="46" uuid="392f6815-5846-4647-9ddf-e2a7b55e9716"/>
+				<imageExpression><![CDATA["C:\\Users\\Victor Hernandez\\Documents\\NetBeansProjects\\ApplicacionSportStore2013241\\src\\org\\victorhernandez\\images\\IconoFactura.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="-14" width="570" height="26" uuid="d13ed481-8696-4679-95d5-f1056260f048"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaCompra}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="30" width="572" height="1" uuid="a9cd0b37-fc60-4d32-9604-b724007a78c2"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="145" height="22" uuid="335833ed-adb5-4e48-b850-8ec3a3ec8089"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="166" y="0" width="136" height="22" uuid="607ddac3-b3d7-4708-baff-bdf8e2277e33"/>
+				<textElement verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NumeroDocumento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="0" width="160" height="22" uuid="420f0d49-bfbc-46bc-b447-de7902ab7645"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionCompra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="318" y="0" width="94" height="22" uuid="b721fcf0-a710-4f36-ad1d-715da923c933"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="147" splitType="Stretch">
+			<textField>
+				<reportElement x="112" y="1" width="206" height="18" uuid="1939ff4b-b7ac-4c8a-b34f-31f4c5b54e42"/>
+				<textElement verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RazonSocial}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-17" y="29" width="570" height="31" uuid="8b208df3-ce6c-44bd-bef4-554775e3d0c0"/>
+				<subreportParameter name="_NumeroDocumento">
+					<subreportParameterExpression><![CDATA[$P{_NumeroDocumento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "DetalleCompra.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="20" y="1" width="92" height="18" uuid="a66dfb05-d7e8-457c-b1b2-f5d9d3a432a2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Razón social:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="1" width="56" height="18" uuid="19069a3e-ded8-469f-a19e-2c5582995421"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="374" y="1" width="198" height="18" uuid="b89e71f6-e898-4b53-b51c-f8aac0eb754a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TotalCompra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="67"/>
+	</lastPageFooter>
+	<summary>
+		<band height="22" splitType="Stretch"/>
+	</summary>
+</jasperReport>

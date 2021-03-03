@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteMarcas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42730cf6-f8a7-4b7b-a79c-e8c866c76d7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="_CodigoMarca" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_ListarMarcas $P{_CodigoMarca}]]>
+	</queryString>
+	<field name="CodigoMarca" class="java.lang.Integer"/>
+	<field name="DescripcionMarca" class="java.lang.String"/>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="41" uuid="eb1573e5-72ca-4ce8-a9de-ac334953c24e"/>
+				<textElement textAlignment="Center">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[SportStore]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="184" y="41" width="428" height="11" forecolor="#FFFFFF" backcolor="#000000" uuid="b472490d-416a-4d50-99f3-a8c52c5a1db3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="52" width="802" height="0" uuid="98351ecb-0a0f-4870-a76d-c93af760c9d4"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Marcas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="73" width="802" height="2" uuid="90fa66a3-3d38-4a00-8dca-62fab60af4b9"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="52" width="802" height="20" uuid="26c1bccd-83dc-48d6-8c93-f17f6e0bdbf2"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte Marcas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="416" y="0" width="111" height="28" uuid="2a95267e-c304-44a4-89b9-c4b7e9bf07a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DescripcionMarca]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="28" width="802" height="2" uuid="a7592dd6-5353-454a-832c-f1ed59c9c6ab"/>
+			</line>
+			<staticText>
+				<reportElement x="286" y="2" width="100" height="28" uuid="3678bd7a-e909-4c50-b869-7b8c8782b51f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CodigoMarca]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="286" y="0" width="100" height="20" uuid="ed79a8b6-42d8-4f8b-aa0b-0a4fd9ac99e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoMarca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="111" height="20" uuid="60ae5223-b783-4a2b-9cac-5ed8e6a1fd1b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DescripcionMarca}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
